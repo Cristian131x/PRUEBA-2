@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import render
 from .models import Producto
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -26,8 +28,10 @@ def Snack(request):
 
 def Cabritas(request):
     print("Estamos en la vista listar")
-    context={}
-    return render(request,'productos/Cabritas.html',context)
+    data = {
+        'productos': Producto.objects.filter(tipo='Bebida')
+    }
+    return render(request,'productos/Cabritas.html',data)
 
 def listar_productos(request):
     print("Estamos en la vista listar")
@@ -37,8 +41,10 @@ def listar_productos(request):
 
 def Bebidas(request):
     print("Estamos en la vista Bebidas")
-    context={}
-    return render(request,'productos/Bebidas.html',context)
+    data = {
+        'productos' :Producto.objects.filter(tipo='Bebida')
+    }
+    return render(request,'productos/Bebidas.html' , data)
 
 def mostrar_productos(request):
     print("Estamos en la vista mostrar productos")
@@ -143,7 +149,7 @@ def actualizar_producto(request):
             mi_numero = request.POST['numero']
             mi_precio = request.POST['precio']
             mi_nombre = request.POST['nombre']
-            mi_foto = request.FILES['foto']
+            mi_foto = request.FILES.get('foto')
             mi_stock = request.POST['stock']
             mi_tipo = request.POST['tipo']
 

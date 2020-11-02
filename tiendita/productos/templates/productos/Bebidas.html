@@ -6,46 +6,17 @@
 {% block content%}
     {% load static %}
     <div class="row" style="background-color: #f8f4e8;">
+        {% for p in productos %}
         <div class="row">
+            {% if p.foto %}
             <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/COCA.png' %}"  alt="" width="200" height="200">
+                <img src="{{ p.foto.url }}"  alt="" width="250" height="250">
                 <br>
-                <p class="flow-text">COCA COLA $1.200</p>
+                <p class="flow-text">{{p.nombre}} ${{p.precio}}</p>
             </div>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/LIGHT.png' %}"  alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">COCA LIGHT $1.000</p>
-            </div>
+            {% endif %}
         </div>
-        <div class="row">
-            <br>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/FANTA.png' %}"  alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">FANTA $1200</p>
-            </div>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/SPRITE.png' %}"  alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">SPRITE $1.200</p>
-            </div>
-        </div>
-        <div class="row">
-            <br>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/PEPSI.png' %}"  alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">PEPSI $1.200</p>
-            </div>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'BEBIDAS/AGUA.png' %}"  alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">AGUA MINERAL $1.000</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}
 
-{% block javascript%}
-{% endblock %}
