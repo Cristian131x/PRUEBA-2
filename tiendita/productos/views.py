@@ -1,7 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import render
 from .models import Producto
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
+
 
 def index(request):
     print("Estamos en la vista")
@@ -12,10 +13,14 @@ def listar(request):
     print("Estamos en la vista listar")
     context={}
     return render(request,'productos/listar.html',context)
+
+@permission_required('productos.add_producto')
 def administrar(request):
     print("Estamos en la vista listar")
+
     context={}
     return render(request,'productos/administrar.html',context)
+
 def Snack(request):
     print("Estamos en la vista listar")
     data = {

@@ -26,6 +26,9 @@
         <div class="nav-content">
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a href="Inicio" >Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li class="tab"><a href="#" >USUARIO: {{ user.username }}</a></li>
+                {% endif %}
                 <li class="tab"><a href="Cabritas" >Palomitas</a></li>
                 <li class="tab"><a href="Bebidas" >Refrescos</a></li>
                 <li class="tab"><a href="Snack" >Snacks</a></li>
