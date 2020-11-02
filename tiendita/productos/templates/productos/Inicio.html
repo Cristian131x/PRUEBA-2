@@ -1,0 +1,33 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Inicio jeje {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="{% static 'Imagenes/FONDO_INI.png' %}" alt="">
+                <div class="caption center-align">
+                </div>
+            </li>
+            <li>
+                <img src="{% static 'Imagenes/CABRITAS.jpg' %}" alt="">
+                <div class="caption left-align">
+                </div>
+            </li>
+            <li>
+                <img src="{% static 'Imagenes/BODEGA.jpg' %}" alt="">
+                <div class="caption right-align">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{%  static 'js/fondo.js' %}"></script>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock%}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> {% block title%}  KIRBY STORE {% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'Imagenes/Cocinero_Cook.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tools.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+
+            <img class="responsive-img" alt="" src="{%static 'Imagenes/Cocinero_Cook.png' %}" width="65" height="65">
+            <h1 id="pink" class="brand-logo">LA TIENDITA DE KIRBY</h1>
+
+            </div>
+        </div>
+        <hr>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="Inicio" >Inicio</a></li>
+                <li class="tab"><a href="Cabritas" >Palomitas</a></li>
+                <li class="tab"><a href="Bebidas" >Refrescos1</a></li>
+                <li class="tab"><a href="Snack" >Snacks</a></li>
+                <li class="tab"><a href="administrar" >Administracion</a></li>
+                <li class="tab"><a href="{% url 'auth_logout' %}" >Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        {% block content %}
+
+        {% endblock %}
+        <div class="col s12" id="caja5">
+            <div class="carousel">
+                <h3>PRODUCTOS MÁS VENDIDOS</h3>
+                <a class="carousel-item" href="#one!"><img src="{% static 'PALOMITAS/3.png' %}" alt="" width="250" height="250"></a>
+                <a class="carousel-item" href="#two!"><img src="{% static 'BEBIDAS/PEPSI.png' %}" alt="" width="250" height="250"></a>
+                <a class="carousel-item" href="#three!"><img src="{% static 'PALOMITAS/4.png' %}" alt="" width="250" height="250"></a>
+                <a class="carousel-item" href="#four!"><img src="{% static 'SNACKS/DORITOS.png' %}" alt="" width="250" height="250"></a>
+                <a class="carousel-item" href="#five!"><img src="{% static 'BEBIDAS/COCA.png' %}" alt="" width="250" height="250"></a>
+                <a class="carousel-item" href="#six!"><img src="{% static 'SNACKS/LAYS.png' %}" alt="" width="250" height="250"></a>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Contenido de Pie de Página</h5>
+                        <p class="grey-text text-lighten-4">Página creada para comprar comida del cine sin ir al cine
+                            todos los derechos reservados</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Nuestras Redes Sociales</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/"
+                                    target="_blank">Facebook</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/"
+                                    target="_blank">Instagram</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/"
+                                    target="_blank">Youtube</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=es"
+                                    target="_blank">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 KIRBYSTORE. Todos los Derechos Reservados
+                    <a class="grey-text text-lighten-4 right">Atención al Cliente: +56 9 8765 4321</a><br>
+                    <a class="grey-text text-lighten-4 right">Mesa de Ayuda: +56 2 8765 4321</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/fondo.js' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.mib.js' %}"></script>
+    <script src="{% static 'js/rango-jquery.js' %}"></script>
+
+    {% block javascript%}
+
+
+
+    {% endblock javascript%}
+
+
+</body>
+</html>
+

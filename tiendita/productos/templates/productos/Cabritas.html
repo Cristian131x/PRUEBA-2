@@ -1,0 +1,37 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <div class="row" style="background-color: #f8f4e8;">
+        <div class="row">
+            <div class="col s4 offset-s2">
+                <img src="{% static 'PALOMITAS/1.png' %}" alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">CABRITAS PEQUEÑAS $1.000</p>
+            </div>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'PALOMITAS/2.png' %}" alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">CABRITAS NORMALES $2.000</p>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'PALOMITAS/3.png' %}" alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">CABRITAS MEDIANAS $2.000</p>
+            </div>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'PALOMITAS/4.png' %}" alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">CABRITAS GIGANTES $30.000</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

@@ -1,0 +1,51 @@
+
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <div class="row" style="background-color: #f8f4e8;">
+        <div class="row">
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/COCA.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">COCA COLA $1.200</p>
+            </div>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/LIGHT.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">COCA LIGHT $1.000</p>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/FANTA.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">FANTA $1200</p>
+            </div>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/SPRITE.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">SPRITE $1.200</p>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/PEPSI.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">PEPSI $1.200</p>
+            </div>
+            <div class="col s4 offset-s2">
+                <img src="{% static 'BEBIDAS/AGUA.png' %}"  alt="" width="200" height="200">
+                <br>
+                <p class="flow-text">AGUA MINERAL $1.000</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
