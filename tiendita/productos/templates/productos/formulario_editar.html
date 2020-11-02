@@ -31,18 +31,18 @@
                 <label>Tipo     :</label>
                  <select name="tipo" value="{{producto.tipo}}">
                      <option value="Seleccionar" disabled>Seleccionar</option>
-                     {% if producto.tipo == "bebida" %}
+                     {% if producto.tipo == "Bebida" %}
                          <option value="Bebida" selected>Bebida</option>
                      {% else %}
                          <option value="Bebida">Bebida</option>
                      {% endif %}
-                     {% if producto.tipo == "snack" %}
+                     {% if producto.tipo == "Snack" %}
                          <option value="Snack" selected>Snack</option>
                      {% else %}
                          <option value="Snack">Snack</option>
                      {% endif %}
-                     {% if producto.tipo == "cabritas" %}
-                         <option value="Cabrita" selected>Cabritas</option>
+                     {% if producto.tipo == "Cabrita" %}
+                         <option value="Cabrita" selected>Cabrita</option>
                      {% else %}
                          <option value="Cabrita">Cabrita</option>
                      {% endif %}
@@ -64,8 +64,7 @@
         <div class="row">
             <div class="col s3 offset-s5">
                 {% if producto.foto %}
-                    <tr><td><p>{{producto.foto.url }}</p></td></tr>
-                    <tr><td><p><img src="{{producto.foto.url}}"></p></td></tr>
+                    <tr><td><p><img src="{{producto.foto.url}}" height="300" width="300"></p></td></tr>
                 {% endif %}
             </div>
         </div>

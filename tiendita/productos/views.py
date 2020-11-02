@@ -3,11 +3,6 @@ from django.shortcuts import render
 from .models import Producto
 from django.contrib.auth.decorators import login_required
 
-
-
-
-
-
 def index(request):
     print("Estamos en la vista")
     context={}
@@ -23,13 +18,15 @@ def administrar(request):
     return render(request,'productos/administrar.html',context)
 def Snack(request):
     print("Estamos en la vista listar")
-    context={}
-    return render(request,'productos/Snack.html',context)
+    data = {
+        'productos': Producto.objects.filter(tipo='Snack')
+    }
+    return render(request, 'productos/Bebidas.html', data)
 
 def Cabritas(request):
     print("Estamos en la vista listar")
     data = {
-        'productos': Producto.objects.filter(tipo='Bebida')
+        'productos': Producto.objects.filter(tipo='Cabrita')
     }
     return render(request,'productos/Cabritas.html',data)
 
@@ -49,7 +46,6 @@ def Bebidas(request):
 def mostrar_productos(request):
     print("Estamos en la vista mostrar productos")
     lista = Producto.objects.all()
-    #lista = Producto.objects.filter(activo=1, genero= 'femenino')
     context={'listado':lista}
     return render(request,'productos/listar_productos.html',context)
 

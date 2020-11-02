@@ -4,34 +4,15 @@
 
 {% block content%}
     {% load static %}
-    <div class="row" style="background-color: #f8f4e8;">
-        <div class="row">
-            <div class="col s4 offset-s2">
-                <img src="{% static 'PALOMITAS/1.png' %}" alt="" width="200" height="200">
+    <div class="row">
+        {% for p in productos %}
+            {% if p.foto %}
+            <div class="col s12 m4 l3 ">
+                <center><img src="{{ p.foto.url }}"  alt="" width="250" height="250"></center>
                 <br>
-                <p class="flow-text">CABRITAS PEQUEÑAS $1.000</p>
+                <center><p class="flow-text">{{p.nombre}} ${{p.precio}}</p></center>
             </div>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'PALOMITAS/2.png' %}" alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">CABRITAS NORMALES $2.000</p>
-            </div>
-        </div>
-        <div class="row">
-            <br>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'PALOMITAS/3.png' %}" alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">CABRITAS MEDIANAS $2.000</p>
-            </div>
-            <div class="col s4 offset-s2">
-                <img src="{% static 'PALOMITAS/4.png' %}" alt="" width="200" height="200">
-                <br>
-                <p class="flow-text">CABRITAS GIGANTES $30.000</p>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
-{% endblock %}
-
-{% block javascript%}
 {% endblock %}
