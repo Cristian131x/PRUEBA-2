@@ -29,6 +29,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'tiendkirby999@gmail.com'
+EMAIL_HOST_PASSWORD = 'olidatas12'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 # Application definition
 
@@ -142,8 +148,6 @@ STATICFILES_DIRS = (
 )
 
 # en producción hay que eliminar estos backend
-EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 # fin backend email
 
 ACCOUNT_ACTIVATION_DAYS = 7
