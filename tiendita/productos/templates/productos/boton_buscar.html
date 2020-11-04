@@ -17,7 +17,7 @@
         <div class="col s4 offset-s4">
             <form action="buscar_por_id" method="POST">
                 {% csrf_token %}
-                <label>Ingrese algun id para buscar un producto</label>
+                <label>Ingrese algun numero para buscar un producto</label>
                 <input type="number" name="numero">
                 <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i><input type="submit" name="opcion" value="Buscar"></a>
                 <a href="administrar" class="waves-effect waves-light btn">CANCELAR</a>

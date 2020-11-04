@@ -8,9 +8,17 @@
 
     <div class="row">
         <div class="col s4 offset-s4">
-            Llego el dato econtrado es {{producto}}
+            <center>
+            Llego el producto numero: {{ producto.numero }} sus datos son: <br>
+                Nombre: {{ producto.nombre}} <br>
+                Precio: ${{producto.precio}} <br>
+                Stock: {{producto.stock}}
             <br>
-            <a href="administrar" class="waves-effect waves-light btn">VOLVER</a>
+            <img src="{{producto.foto.url}}" height="250" width="250">
+            </center>
+            <br>
+            <br>
+            <center><a href="administrar" class="waves-effect waves-light btn">VOLVER</a></center>
         </div>
     </div>
 {% endblock %}

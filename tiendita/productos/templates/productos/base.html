@@ -33,7 +33,12 @@
                 <li class="tab"><a href="Bebidas" >Refrescos</a></li>
                 <li class="tab"><a href="Snack" >Snacks</a></li>
                 <li class="tab"><a href="administrar" >Administracion</a></li>
+                {% if not user.is_authenticated %}
+                <li class="tab"><a href="{% url 'auth_login' %}" >Iniciar Sesion</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
                 <li class="tab"><a href="{% url 'auth_logout' %}" >Cerrar Sesion</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>

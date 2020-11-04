@@ -10,8 +10,8 @@
         <div class="col s4 offset-s5">
             LA CANTIDAD TOTAL DE PRODUCTOS ES: {{ listado | length }} <br><br>
             {% for producto in listado %}
-                <label>ID   </label><label>   Nombre   </label><label>   Precio   </label><label>   Stock</label><br>
-                {{ producto.id_producto }} - {{ producto.nombre}} - {{producto.precio}} - {{producto.stock}} <br><br>
+                <label>Numero   </label><label>   Nombre   </label><label>   Precio   </label><label>   Stock</label><br>
+                {{ producto.numero }} - {{ producto.nombre}} - {{producto.precio}} - {{producto.stock}} <br><br>
 
             {% endfor %}
         </div>

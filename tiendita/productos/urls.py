@@ -17,13 +17,13 @@ urlpatterns = [
     path('editar',views.editar, name='editar'),
     path('buscar_para_editar', views.buscar_para_editar, name='buscar_para_editar'),
     path('actualizar_producto',views.actualizar_producto, name='actualizar_producto'),
-    path('menu',views.menu, name='menu'),
     path('Inicio',views.Inicio, name='Inicio'),
     path('Bebidas',views.Bebidas, name='Bebidas'),
     path('Snack',views.Snack, name='Snack'),
     path('Cabritas',views.Cabritas, name='Cabritas'),
     path('listar_productos',views.listar_productos, name='listar_productos'),
     path('administrar',views.administrar, name='administrar'),
+
 
 
 

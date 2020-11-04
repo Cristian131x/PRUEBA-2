@@ -14,6 +14,11 @@ def listar(request):
     context={}
     return render(request,'productos/listar.html',context)
 
+
+
+
+
+
 @permission_required('productos.add_producto')
 def administrar(request):
     print("Estamos en la vista listar")
@@ -152,7 +157,9 @@ def actualizar_producto(request):
             mi_nombre = request.POST['nombre']
             mi_foto = request.FILES.get('foto')
             mi_stock = request.POST['stock']
-            mi_tipo = request.POST['tipo']
+            mi_tipo = request.POST.get('tipo')
+
+
 
             if mi_numero != "":
                 try:
@@ -183,36 +190,35 @@ def agregar_producto(request):
         mi_nombre = request.POST['nombre']
         mi_precio = request.POST['precio']
         mi_stock = request.POST['stock']
-        mi_foto = request.FILES['foto']
-        mi_tipo = request.POST['tipo']
+        mi_foto = request.FILES.get('foto')
+        mi_tipo = request.POST.get('tipo')
 
-        if mi_numero != "":
-            try:
-                producto = Producto()
-                producto.numero = mi_numero
-                producto.nombre = mi_nombre
-                producto.precio = mi_precio
-                producto.foto = mi_foto
-                producto.stock = mi_stock
-                producto.activo = 1
-                producto.tipo = mi_tipo
+        if mi_numero != "" and mi_nombre != "" and mi_precio != "" and mi_stock != "" and mi_tipo != "":
+            if int(mi_stock) >= 1 and int(mi_precio) >= 1:
 
-                producto.save()
+                try:
+                    producto = Producto()
+                    producto.numero = mi_numero
+                    producto.nombre = mi_nombre
+                    producto.precio = mi_precio
+                    producto.foto = mi_foto
+                    producto.stock = mi_stock
+                    producto.activo = 1
+                    producto.tipo = mi_tipo
 
-                return render(request, 'productos/mensaje_datos_grabados.html', {})
+                    producto.save()
 
-            except producto.DoesNotExist:
-                return render(request, 'productos/error/error_204.html', {})
+                    return render(request, 'productos/mensaje_datos_grabados.html', {})
+
+                except producto.DoesNotExist:
+                    return render(request, 'productos/error/error_204.html', {})
+            else:
+                return render(request, 'productos/error/error_205.html', {})
         else:
             return render(request, 'productos/error/error_201.html', {})
     else:
         return render(request, 'productos/error/error_203.html', {})
 
-def menu(request):
-    print("ok, estamos en la vista menu alumnos")
-    productos = Producto.objects.all()
-    context={'Producto':productos}
-    return render(request,'productos/menu_producto.html',context)
 
 def Inicio(request):
     print("ok, estamos en la vista menu alumnos")

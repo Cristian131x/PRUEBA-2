@@ -13,13 +13,10 @@ class Producto(models.Model):
     activo          = models.IntegerField(blank=True, null=True)
 
     def __int__(self):
-        return str(self.numero) + ", " + self.precio + ", " + self.stock.__int__()
+        return int(self.numero) + ", " + self.precio + ", " + self.stock.__int__()
 
     def __str__(self):
         return self.nombre + ", " + str(self.tipo) + ", " + self.foto.__str__()
-
-
-
 
     class Meta:
         ordering = ["numero"]
