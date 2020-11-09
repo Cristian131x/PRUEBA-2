@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'productos',
     'materializecssform',
     'materialize',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +157,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/productos/Inicio'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
