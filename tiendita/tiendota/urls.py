@@ -26,13 +26,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+#router.register(r'productos', views.ProductoViewSet)
 
 urlpatterns = [
     path('productos/',include('productos.urls')),
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include('pwa.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -12,3 +12,10 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+"""
+class ProductoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Producto
+        fields = ['id_producto', 'numero', 'nombre', 'precio', 'stock', 'foto', 'tipo', 'activo']
+"""

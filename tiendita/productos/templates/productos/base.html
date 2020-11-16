@@ -2,7 +2,10 @@
 
 <html lang="en">
 <head>
+    {% load pwa %}
+    {% progressive_web_app_meta %}
     {% load static %}
+
     <meta charset="UTF-8">
     <title> {% block title%}  KIRBY STORE {% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'Imagenes/Cocinero_Cook.png' %}" />
@@ -46,7 +49,7 @@
         {% block content %}
 
         {% endblock %}
-        <div class="col s12" id="caja5">
+        <div class="col s12 #ff9e80 deep-orange accent-1">
             <div class="carousel">
                 <h3>PRODUCTOS MÁS VENDIDOS</h3>
                 <a class="carousel-item" href="#one!"><img src="{% static 'PALOMITAS/3.png' %}" alt="" width="250" height="250"></a>
