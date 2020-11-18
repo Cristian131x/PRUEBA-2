@@ -28,7 +28,7 @@
 
     <div class='row'>
         <div class="col s4 offset-s4"><br/>
-
+        <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
         <center><p>{% trans "¿Has olvidado tu contraseña" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!</p></center>
         <center><p>{% trans "¿No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!</p></center>
         </div>

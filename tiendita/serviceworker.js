@@ -47,9 +47,6 @@ self.addEventListener('fetch', function(event) {
       .catch(function(e){
           return caches.match(event.request)
       })
-
-
-
     );
 });
 
